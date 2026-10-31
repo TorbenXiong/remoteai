@@ -10,9 +10,6 @@ import { GuiAccountList } from '../GuiAccountList';
 import { RemoteAccountSummary } from './RemoteAccountSummary';
 import type { GuiComputerNavigation } from './types';
 import styles from '../ProxyAccountPicker.module.less';
-import { MarketLauncher } from '../../../../../../shared/provider-market/MarketLauncher';
-import { desktopRemoteProviderMarket } from '../../../api/providerMarket';
-import { guiLanguage } from '../../../i18n/uiText';
 
 const ACCOUNT_REFRESH_MS = 60_000;
 
@@ -43,7 +40,6 @@ export function RemoteAccountPicker({ active, ready, client, computers, privacyM
     onSelectAccount={(id) => { void select('account', id); }}
     onSelectAggregate={(id) => { void select('aggregate', id); }}
     onSelectProvider={(id) => { void select('provider', id); }} footer={<>
-      <MarketLauncher client={desktopRemoteProviderMarket} language={guiLanguage()} />
       {!ready && <p className={styles.hint}>{uiText("client.chat.connectToYourComputerToSwitchAccounts")}</p>}
       {ready && accounts.snapshot && !accounts.snapshot.running
         && <p className={styles.hint}>{uiText("client.workspaceActions.startTheLocalProxyOnThisComputerFirst")}</p>}

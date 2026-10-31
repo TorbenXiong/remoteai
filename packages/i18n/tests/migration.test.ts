@@ -17,12 +17,16 @@ import downloadWorkspace from '../src/catalogs/client/zh/downloadWorkspace.json'
 import commandMetrics from '../src/catalogs/client/zh/commandMetrics.json';
 import requestErrors from '../src/catalogs/client/zh/requestErrors.json';
 import chatQuota from '../src/catalogs/client/zh/chatQuota.json';
+import chatCredits from '../src/catalogs/client/zh/chatCredits.json';
 import sheet from '../src/catalogs/client/zh/sheet.json';
 import projectBrowserFiles from '../src/catalogs/client/zh/projectBrowserFiles.json';
 import conversationWorkspace from '../src/catalogs/client/zh/conversationWorkspace.json';
 import accountAlias from '../src/catalogs/client/zh/accountAlias.json';
 import filePreview from '../src/catalogs/client/zh/filePreview.json';
 import projectActions from '../src/catalogs/client/zh/projectActions.json';
+import projectExplorer from '../src/catalogs/client/zh/projectExplorer.json';
+import mappingHub from '../src/catalogs/client/zh/mappingHub.json';
+import mappingEditor from '../src/catalogs/client/zh/mappingEditor.json';
 import jsonPreview from '../src/catalogs/client/zh/jsonPreview.json';
 import modelSelection from '../src/catalogs/client/zh/modelSelection.json';
 import npmScripts from '../src/catalogs/client/zh/npmScripts.json';
@@ -57,12 +61,16 @@ const additions = new Set(['client.chat.usePlugin',
   ...Object.keys(commandMetrics),
   ...Object.keys(requestErrors),
   ...Object.keys(chatQuota),
+  ...Object.keys(chatCredits),
   ...Object.keys(sheet),
   ...Object.keys(projectBrowserFiles),
   ...Object.keys(conversationWorkspace),
   ...Object.keys(accountAlias),
   ...Object.keys(filePreview),
   ...Object.keys(projectActions),
+  ...Object.keys(projectExplorer),
+  ...Object.keys(mappingHub),
+  ...Object.keys(mappingEditor),
   ...Object.keys(jsonPreview),
   ...Object.keys(modelSelection),
   ...Object.keys(npmScripts),

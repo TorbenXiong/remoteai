@@ -1,11 +1,15 @@
 .chat-mermaid-diagram {
-  min-width: 0; overflow: hidden; border: 1px solid var(--app-border, #dcebe3);
-  border-radius: 14px; background: var(--app-canvas, #fff);
+  --mermaid-surface: var(--gui-chat-surface, var(--app-surface, var(--panel, #fff)));
+  --mermaid-border: var(--gui-border, var(--app-border, var(--line, #dcebe3)));
+  --mermaid-ink: var(--app-ink, var(--ink, #17251f));
+  --mermaid-soft: color-mix(in srgb, var(--mermaid-ink) 7%, var(--mermaid-surface));
+  min-width: 0; overflow: hidden; border: 1px solid var(--mermaid-border);
+  border-radius: 14px; background: var(--mermaid-surface); color: var(--mermaid-ink);
 }
 .chat-mermaid-toolbar {
   display: flex; align-items: center; justify-content: space-between; min-height: 42px;
-  padding: 0 10px 0 12px; border-bottom: 1px solid var(--app-border, #e6eee9);
-  color: var(--muted, #718079);
+  padding: 0 10px 0 12px; border-bottom: 1px solid var(--mermaid-border);
+  color: var(--app-muted, var(--muted, #718079));
 }
 .chat-mermaid-modes { display: flex; gap: 4px; }
 .chat-mermaid-modes button, .chat-mermaid-copy {
@@ -13,13 +17,13 @@
 }
 .chat-mermaid-modes button { padding: 5px 8px; font-size: 12px; }
 .chat-mermaid-modes button[aria-pressed="true"] {
-  background: var(--app-canvas-soft, #e3f3ed); color: var(--ink, #17251f);
+  background: var(--mermaid-soft); color: var(--mermaid-ink);
 }
 .chat-mermaid-copy { display: grid; place-items: center; width: 30px; height: 30px; }
-.chat-mermaid-copy:hover { background: var(--app-canvas-soft, #e3f3ed); color: var(--ink, #17251f); }
+.chat-mermaid-copy:hover { background: var(--mermaid-soft); color: var(--mermaid-ink); }
 .chat-mermaid-canvas { overflow: auto; padding: 12px; }
 .chat-mermaid-canvas > svg { display: block; width: 100%; height: auto; }
 .chat-mermaid-source {
-  margin: 0; overflow: auto; padding: 16px; color: var(--ink, #17251f);
-  background: var(--app-canvas-soft, #f5f8f6); font: 13px/1.6 ui-monospace, Consolas, monospace; white-space: pre-wrap;
+  margin: 0; overflow: auto; padding: 16px; color: var(--mermaid-ink);
+  background: var(--mermaid-soft); font: 13px/1.6 ui-monospace, Consolas, monospace; white-space: pre-wrap;
 }
